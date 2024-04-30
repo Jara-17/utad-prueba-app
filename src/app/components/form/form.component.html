@@ -1,0 +1,23 @@
+<form class="px-4 flex flex-col md:flex-row items-center gap-4 mt-4">
+  <div class="flex items-center gap-x-4 w-full">
+    <label class="text-lg font-semibold">Ciudad</label>
+    <input [(ngModel)]="cityText" name="cityText"
+      class="w-full border border-blue-500 outline-blue-700 rounded-md px-2 py-1" type="text"
+      placeholder="Ingresa la ciudad" id="city">
+  </div>
+
+  <button type="button" class="
+    w-full
+    md:w-32
+    border-2 
+    border-green-500 
+    px-4 py-1 
+    rounded-md 
+    bg-green-100 
+    hover:bg-green-200 
+    transition-colors 
+    text-green-700 
+    font-bold " (click)="onSubmit()">
+    Agregar
+  </button>
+</form>

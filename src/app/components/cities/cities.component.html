@@ -1,0 +1,28 @@
+<p class="text-center text-lg mt-4" *ngIf="cities.length === 0">No hay ciudades en la lista</p>
+<ul class="p-4" *ngFor="let city of cities; let i = index">
+  <li class="list">
+    <p class="font-bold text-lg text-gray-500">{{city.name}}</p>
+
+    <label [for]="'toggle-example-' + i" class="flex items-center cursor-pointer relative">
+      <input type="checkbox" (change)="onChecked($event, city)" [id]="'toggle-example-' + i" class="sr-only">
+      <div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full"></div>
+      <span class="ml-3 font-medium"
+        [ngClass]="city.visited === 'Sin Visitar' ? 'text-gray-500' : 'text-blue-500'">{{city.visited}}</span>
+    </label>
+
+    <button class="
+      w-full
+      md:w-32
+      border-2 
+      border-red-500 
+      px-4 py-1 
+      rounded-md 
+      bg-red-100 
+      hover:bg-red-200 
+      transition-colors 
+      text-red-700 
+      font-bold " (click)="onDelete(city)">
+      Eliminar
+    </button>
+  </li>
+</ul>
